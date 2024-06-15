@@ -1,26 +1,18 @@
-function same(arr1, arr2){
-    if(arr1.length !== arr2.length){
-        return false;
+function countUniqueValues(arr){
+    if(arr.length === 0) {
+        return 0;
     }
-    let frequencyCounter1 = {}
-    let frequencyCounter2 = {}
-    for(let val of arr1){
-        frequencyCounter1[val] = (frequencyCounter1[val] || 0) + 1
-    }
-    for(let val of arr2){
-        frequencyCounter2[val] = (frequencyCounter2[val] || 0) + 1        
-    }
-    console.log(frequencyCounter1);
-    console.log(frequencyCounter2);
-    for(let key in frequencyCounter1){
-        if(!(key ** 2 in frequencyCounter2)){
-            return false
+
+    let i = 0;
+
+    for (let j = 0; j < arr.length; j++) {
+        if(arr[i] !== arr[j]) {
+            i++;
+            arr[i] = arr[j];
         }
-        if(frequencyCounter2[key ** 2] !== frequencyCounter1[key]){
-            return false
-        }
+        // console.log(i, j);
     }
-    return true
+    return i + 1;
 }
 
-same([1,2,3,2,5], [9,1,4,4,11])
+console.log(countUniqueValues([1,2,2,5,7,7,99]));
