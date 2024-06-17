@@ -1,7 +1,13 @@
-function sum(...nums) {
-	return nums.reduce((acc, num) => acc + num);
+const functionArgs = [1,2,3,4];
+
+function multiplyNumbers (a, b, c, d) {
+    return a*b*c*d;
 }
 
-console.log(sum(1, 2, 3)) // 6
-console.log(sum(1, -1)) // 0
-console.log(sum(...[1, 2, 3])) // 6
+console.log(multiplyNumbers(...functionArgs));
+
+function testRest(...values) {
+    return values;
+}
+
+console.log(testRest("Eshaan", "Rahul"))
