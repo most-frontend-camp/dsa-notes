@@ -1,9 +1,9 @@
 let bird = 'Golden Sheep';
 
-function bridWatch(){
+function birdWatch(){
     let bird = 'Orange Fox';
     console.log(bird);
 }
 
-bridWatch();
-console.log(bird);
+birdWatch(); // Orange Fox
+console.log(bird); // Golden Sheep
